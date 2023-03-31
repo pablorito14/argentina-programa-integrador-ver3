@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  
+
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark custom-shadow" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="../">Financiera G3</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fs-1 text-white"><i class="bi bi-list"></i></span>
+        </button>
+  
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./conversion.html">U$D a AR$</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">Acerca de la empresa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/pablorito14/ArgentinaPrograma-Integrador-alt" target="_blank">GIT Repo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="cargando">
+    <div class="position-absolute d-flex w-100 vh-100 align-items-center justify-content-center z-3 bg-dark opacity-75">
+      <div class="text-white fw-bold fs-2 me-3">
+        Cargando
+      </div>
+      <div class="spinner-border text-white"></div>
+    </div>
+
+  </div>
+
+  <main class="container py-5">
+    <div class="py-4 px-2 text-center-">
+      <h1 class="text-center">Conversion</h1>
+      <h5 class="text-center">Convertir de Dólares a Pesos (AR)</h5>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <form id="conversion-form">
+            <div class="row">
+              <div class="col-12">
+                <label for="dolares" class="fomr-label mb-1 fw-bold">Dolares</label>
+                <div class="input-group custom-shadow rounded mb-3">
+                  
+                  <span class="input-group-text custom-shadow-">U$D</span>
+                  <input type="text" id="dolares" name="dolares" class="form-control -custom-shadow">
+                  <button id="btn-enviar" class="btn btn-secondary">Calcular </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="" id="process" style="display: none;">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="fw-bold fs-5 me-2">Procesando</div>
+              <div class="spinner-border"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center" id="resultado" style="display: none;">
+        <div class="col-12 col-md-6">
+          <div class="card p-2">
+            <h5 class="text-center border-bottom p-3">
+              U$D <span id="resultado-dolares"></span> = $AR <span id="resultado-pesos"><sup>(1)</sup></span>
+            </h5>
+            
+            <h4 class="text-center">Detalles</h4>
+            
+            <div class="d-flex justify-content-between mb-2">
+              <div class="fw-bold">Conversion dolar oficial</div>
+              <div>$ <span id="valor-oficial"></span></div> 
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <div class="fw-bold">Impuesto PAIS (30%)</div>
+              <div>$ <span id="imp-pais"></span></div> 
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <div class="fw-bold">Adelanto de ganancias (45%)</div>
+              <div>$ <span id="ad-ganancias"></span></div> 
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <div class="fw-bold">Impuesto CATAR (25%) <sup>(2)</sup> </div>
+              <div>$ <span id="imp-catar"></span></div> 
+            </div>
+            
+            
+          </div>
+          <div class="lh-sm fst-italic mb-2">
+            <small>
+              <sup>(1)</sup> Valor calculado a segun la cotizacion <span id="dia-cotizacion"></span> 
+                            segun ambito.com (U$D 1 = $AR <span id="cotizacion-dolar"></span> )
+            </small>
+          </div>
+          <div class="lh-sm fst-italic">
+            <small>
+              <sup>(2)</sup> Impuesto aplicable solo a gastos que superen los U$D 300
+            </small>
+          </div>
+          
+
+        </div>
+      </div>
+
+    </div>
+        
+     
+  </main>
+  <footer>
+    <div class="footer py-2 text-white w-100 position-absolute bottom-0 text-center">
+      Copyright by G3 2023 &COPY
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  
+  <script src="../assets/js/conversion.js"></script>
+</body>
+</html>
