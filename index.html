@@ -5,11 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financiera G3</title>
+  <link rel="shortcut icon" href="./assets/img/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header>
-    <h2 class="nav-logo">Financiera G3</h2>
+    <span class="logo">
+      <img class="logo-img" src="./assets/img/logo.png" alt="">
+      <h2 class="logo-text">Financiera G3</h2>
+    </span>
+    
     <nav id="menu">
       <a class="nav-link" href="#home">Inicio</a>
       <a class="nav-link" href="#conversion">U$D a AR$</a>
@@ -17,18 +22,58 @@
       <a class="nav-link" href="#about">Acerca de la empresa</a>
       <a class="nav-link" href="https://github.com/pablorito14/argentina-programa-integrador-ver3" target="_blank">GIT Repo</a>
     </nav> 
-    <button class="btn-menu" onclick="openMenu()">
+    <button class="btn-menu" id="btn-menu">
       <i class="bi bi-list"></i>
     </button>   
     
   </header>
   <main class="main-container" id="home">
     <div class="content index-content">
-      <h1>INDEX</h1>
-      <p></p>
+      <h1>Financiera G3</h1>
+      <div class="introduccion">
+        <p>¡Bienvenidos a nuestra página web de servicios financieros!</p> 
+
+        <p>En nuestra empresa, ofrecemos una amplia gama de soluciones financieras diseñadas para ayudar a
+        nuestros clientes a alcanzar sus objetivos financieros y a lograr la estabilidad económica que desean.</p>
+
+        <p>Ya sea que esté buscando una hipoteca para comprar una casa, un préstamo para financiar un proyecto o 
+        una tarjeta de crédito para hacer compras diarias, podemos ayudarlo.</p>
+
+        <p>Nuestros profesionales altamente capacitados están comprometidos en brindarle el mejor servicio al cliente 
+        posible. Nos tomamos el tiempo para entender sus necesidades y objetivos financieros únicos, y trabajamos con usted para diseñar una solución que se adapte a sus necesidades y presupuesto.</p>
+
+       <p>En nuestra página web, encontrará una amplia variedad de recursos útiles para ayudarlo a tomar
+        decisiones financieras informadas. Desde consejos de inversión hasta herramientas de presupuesto,
+        estamos comprometidos en proporcionarle la información y recursos que necesita para tomar
+        decisiones informadas.</p>
+
+       <p>Le invitamos a explorar nuestra página web y a descubrir cómo podemos ayudarlo a alcanzar sus objetivos financieros. Si tiene alguna pregunta o desea obtener más información sobre nuestros servicios, no dude en ponerse en contacto con nosotros. ¡Estamos aquí para ayudarle!</p>
+      </div>
+      <p class="introduccion">
+
+
+        <!-- ¡Bienvenidos a nuestra página web de servicios financieros!
+
+         En nuestra empresa, ofrecemos una amplia gama de soluciones financieras diseñadas para ayudar a
+         nuestros clientes a alcanzar sus objetivos financieros y a lograr la estabilidad económica que desean.
+
+         Ya sea que esté buscando una hipoteca para comprar una casa, un préstamo para financiar un proyecto o 
+         una tarjeta de crédito para hacer compras diarias, podemos ayudarlo.
+
+         Nuestros profesionales altamente capacitados están comprometidos en brindarle el mejor servicio al cliente 
+         posible. Nos tomamos el tiempo para entender sus necesidades y objetivos financieros únicos,
+          y trabajamos con usted para diseñar una solución que se adapte a sus necesidades y presupuesto.
+
+        En nuestra página web, encontrará una amplia variedad de recursos útiles para ayudarlo a tomar
+         decisiones financieras informadas. Desde consejos de inversión hasta herramientas de presupuesto,
+          estamos comprometidos en proporcionarle la información y recursos que necesita para tomar
+           decisiones informadas.
+
+        Le invitamos a explorar nuestra página web y a descubrir cómo podemos ayudarlo a alcanzar sus objetivos financieros. Si tiene alguna pregunta o desea obtener más información sobre nuestros servicios, no dude en ponerse en contacto con nosotros. ¡Estamos aquí para ayudarle! -->
+      </p>
     </div>
 
-    <div class="content conversion-content" id="conversion" tabindex="0">
+    <div class="content conversion-content" id="conversion">
 
       <form id="conversionForm" novalidate>
         <div>
@@ -41,17 +86,11 @@
             <label for="dolares">Dolares</label>
             <input type="number" step="0.01" min="0" value="1"  name="dolares" id="dolares" class="custom-shadow" placeholder="">
           </div>
-          <input type="submit" id="submit" value="Calcular" class="btn btn-contacto custom-shadow">
+          <input type="submit" id="submit" value="Calcular" class="btn custom-shadow">
         </div>
         <div class="invalid-message" id="dolarValorInvalido" style="display: none;">Por favor ingrese numeros positivos (enteros o decimales)</div>
       </form>
-      <!-- <div class="process" id="conversionProcess" style="display: none;">
-        <p>Procesando...</p>
-      </div> -->
-      
-      <div id="conversionResult">
-        
-      </div>
+      <div id="conversionResult"></div>
 
       
     </div>
@@ -62,148 +101,99 @@
 
         <div class="inputGroup">
           <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" placeholder="">
+          <input type="text" name="nombre" id="nombre" placeholder="Juan Carlos Gonzalez" class="custom-shadow">
+          <p class="invalid-message" id="invalidNombre"></p>
         </div>
   
         <div class="inputGroup">
           <label for="email">Correo</label>
-          <input type="text" name="email" id="email" placeholder="">
+          <input type="text" name="email" id="email" placeholder="juancarlos@gmail.com" class="custom-shadow">
+          <p class="invalid-message" id="invalidEmail"></p>
         </div>
   
         <div class="inputGroup">
           <label for="emailConf">Confirmar correo</label>
-          <input type="text" name="emailConf" id="emailConf" placeholder="">
+          <input type="text" name="emailConf" id="emailConf" placeholder="juancarlos@gmail.com" class="custom-shadow">
+          <p class="invalid-message" id="invalidEmailConf"></p>
         </div>
   
         <div class="inputGroup">
           <label for="motivo">Motivo de consulta</label>
-          <select name="motivo" id="motivo">
+          <select name="motivo" id="motivo" class="custom-shadow">
             <option value="" selected disabled>-- Elegir motivo de consulta --</option>
                 <option value="cotizacion">Cotización</option>
                 <option value="prestamo">Préstamo</option>
                 <option value="asesoramiento">Asesoramiento</option>
                 <option value="compra-moneda-extrangera">Compra moneda extrangera</option>
           </select>
+          <p class="invalid-message" id="invalidMotivo"></p>
         </div>
   
         <div class="inputGroup">
           <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="mensaje" rows="5"></textarea>
+          <textarea name="mensaje" id="mensaje" rows="5" placeholder="Consulta o mensaje que nos quieras enviar" class="custom-shadow"></textarea>
+          <p class="invalid-message" id="invalidMensaje"></p>
         </div>
 
-        <input type="submit" value="Enviar" class="btn-green btn-contacto">
+        <input type="submit" value="Enviar" class="btn-green btn-contacto custom-shadow">
       </form>
-      <!-- <div class="pt-5"> -->
-        <div class="" style="display: none;">
-          <div class="title">
-            <h2 class="text-center">Envianos tu consulta</h2>
-          </div>
-          
-          <form id="contactForm" novalidate style="display: flex; flex-direction: column; gap: 1vh;">
-            <div style="width: 450px;">
-              <div class="mb-3">
-                <label for="nombre" class="form-label mb-1 fw-bold">Nombre</label>
-                <input type="text" name="nombre" id="nombre" class="form-control custom-shadow">
-                <p class="invalid-value" id="invalidNombre"></p>
-              </div>
-
-            </div>
-
-            <div >
-              <label for="email" class="form-label mb-1 fw-bold">Correo</label>
-              <input type="email" name="email" id="email" class="form-control custom-shadow">
-              <p class="invalid-message" id="invalidEmail"></p>
-            </div>
-      
-            <div>
-              <label for="confEmail" class="form-label mb-1 fw-bold">Confirmar correo</label>
-              <input type="email" name="confEmail" id="confEmail" class="form-control custom-shadow">
-              <p class="invalid-message" id="invalidConfEmail"></p>
-            </div>
-    
-            <select name="" id=""></select>
-            <div>
-              <label for="motivo" class="form-label mb-1 fw-bold">Motivo de consulta</label>
-              <select name="motivo" id="motivo" class="form-select- custom-shadow">
-                <option value="" selected disabled>-- Elegir motivo de consulta --</option>
-                <option value="cotizacion">Cotización</option>
-                <option value="prestamo">Préstamo</option>
-                <option value="asesoramiento">Asesoramiento</option>
-                <option value="compra-moneda-extrangera">Compra moneda extrangera</option>
-              </select>
-              <p class="invalid-message" id="invalidMotivo"></p>
-            </div>
-          
-            <div>
-              <label for="mensaje" class="form-label mb-1 fw-bold">Confirmar correo</label>
-              <textarea name="mensaje" id="mensaje" rows="4" class="form-control custom-shadow"></textarea>
-              <p class="invalid-message" id="invalidMensaje"></p>
-            </div>
-              
-            
-              <input type="submit" label="enviar" class="btn-green btn-contacto custom-shadow">
-    
-          </form>
-
-        </div>
-
-      <!-- </div> -->
-      
     </div>
 
     <div class="content about-content" id="about">
-      <div class="pt-5-">
-        
-        <div class="py--4 px-2 text-center border-bottom">
-          <h1>Nuestra empresa</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quos repellendus enim sunt nobis quo corrupti eligendi praesentium consequuntur aut architecto, doloribus quia cumque ratione minima. Ex quis numquam soluta?</p>
-        </div>
-        
-        <div class="py-4- px-2 text-center">
-          <h2>Acerca de nosotros</h2>
-          <div class="d-flex flex-wrap justify-content-center g-3 mt-4" style="display: flex;">
-    
-            <div class="profile-info mb-3">
-              <img class="img-fluid rounded-circle custom-shadow" src="https://via.placeholder.com/150x150" alt="">
-              <div class="mt-2">
-                <h4>Nombre</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
-              </div>
+      <div class="about-company">
+        <h1>Nuestra empresa</h1>
+        <p>Somos una Financiera conformada en el 2003, por un grupo de profesionales que buscamos dar solidez y liquidez a nuestros clientes.</p>
+      </div>
+
+      <div class="about-us">
+        <h2>Acerca de nosotros</h2>
+        <div class="about-us-content">
+  
+          <div class="profile-info mb-3">
+            <img class="custom-shadow" src="./assets/img/zary.jpeg" alt="">
+            <div class="mt-2">
+              <h4>Zarina Rico</h4>
+              <p>Hola soy Zarina, tengo 35 años,de Profesión Contadora.</p>
             </div>
-            <div class="profile-info">
-              <img class="img-fluid rounded-circle custom-shadow" src="https://via.placeholder.com/150x150" alt="">
-              <div class="mt-2">
-                <h4>Nombre</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
-              </div>
-              
+          </div>
+          <div class="profile-info">
+            <img class="custom-shadow" src="./assets/img/silvana.jpeg" alt="">
+            <div class="mt-2">
+              <h4>Silvana Nievas</h4>
+              <p>Hola soy Silvana, tengo 36 años, de Profesión Economista.</p>
             </div>
-            <div class="profile-info">
-              <img class="img-fluid rounded-circle custom-shadow" src="https://via.placeholder.com/150x150" alt="">
-              <div class="mt-2">
-                <h4>Nombre</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
-              </div>
-              
+            
+          </div>
+          <div class="profile-info">
+            <img class="custom-shadow" src="https://via.placeholder.com/150x150" alt="">
+            <div class="mt-2">
+              <h4>Nombre</h4>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
             </div>
-            <div class="profile-info">
-              <img class="img-fluid rounded-circle custom-shadow" src="https://via.placeholder.com/150x150" alt="">
-              <div class="mt-2">
-                <h4>Nombre</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
-              </div>
-              
+            
+          </div>
+          <div class="profile-info">
+            <img class="custom-shadow" src="https://via.placeholder.com/250x150" alt="">
+            <div class="mt-2">
+              <h4>Nombre</h4>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
             </div>
+            
+          </div>
+          <div class="profile-info">
+            <img class="custom-shadow" src="https://via.placeholder.com/150x150" alt="">
+            <div class="mt-2">
+              <h4>Nombre</h4>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea perspiciatis similique aspernatur.</p>
+            </div>
+            
           </div>
         </div>
       </div>
-      
     </div>
   </main>
   <footer>
-    <div class="footer py-2 text-white w-100 position-absolute bottom-0 text-center">
-      Copyright by G3 2023 &COPY
-    </div>
+    Copyright by G3 2023 &COPY
   </footer>
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
