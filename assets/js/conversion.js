@@ -42,7 +42,7 @@ const conversionDolares = (dolares) => {
         const total = valorOficial + impPaisVal + adGananciasVal + impCatarVal;
         
         const html = `
-          <div class="card custom-shadow">
+          <div class="card">
             <div class="result">
               <p class="text-center conversion-result">
                 U$D ${dolares} = $AR ${total.toFixed(2)}<sup>(1)</sup>

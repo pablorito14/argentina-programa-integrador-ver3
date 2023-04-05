@@ -4,6 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
 /* BASE */
+:root{
+  --color-principal: #e30613;
+  --color-secundario: #E84C57;
+  --background-gradient-1: linear-gradient(90deg, rgba(12,102,150,0.2) 0%, rgba(12,102,150,0.2) 50%, rgba(12,102,150,0.4) 100%);
+  --shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+
 *{
   margin: 0;
   padding: 0; 
@@ -13,24 +20,6 @@
 body{
   min-height: 100vh;
 }
-body::before{ 
-  /* background-color: cadetblue; */
-  content: '';
-  content: "";
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5)), url("../img/Wave.svg");
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-}
-
-
 
 /* BASE */
 
@@ -40,37 +29,31 @@ header{
   position: fixed;
   top: 0;
   width: 100vw;
-  padding: .5rem 0;
+  padding: .75rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color:rgba(0, 0, 0, 0.8);
   color: whitesmoke;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow);
 }
 
 .logo{
   display: flex;
   align-items: center;
   gap: 1vw;
-}
-
-.logo-text{
-  
-  font-family: 'Ubuntu',sans-serif;
-  cursor: pointer;
-}
-
-.logo-img{
-  margin-left: 1rem;
-  /* width: 3vw; */
+  margin-left: 4rem;
   width: 30px;
+}
+
+.logo img{
+  width: 100%;
 }
 
 nav{
   display: flex;
   gap: 2vw;
-  margin-right: 2rem;
+  margin-right: 4rem;
   position: unset;
   width: auto;
   padding: 0;
@@ -78,21 +61,15 @@ nav{
   
 }
 
-
-.nav-link{
+nav a{
   padding: .5rem;
-}
-
-.nav-link,
-.nav-logo{
   color: whitesmoke;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
-.nav-link:hover,
-.logo-text:hover{
-  transform: scale(1.1);
-  font-weight: bold;
+
+nav a:hover{
+  color: var(--color-secundario);
 }
 
 .link-active{
@@ -112,16 +89,14 @@ nav{
 /* GENERAL */
 
 .content{
-  /* margin-right: 0; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
   min-height: 100vh;
 }
 
 .custom-shadow{
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow);
 }
 
 .title{
@@ -133,6 +108,7 @@ nav{
   margin: 1rem auto;
   border-radius: 10px;
   background-color: whitesmoke;
+  box-shadow: var(--shadow);
 }
 
 .invalid-message{
@@ -142,11 +118,12 @@ nav{
 .invalid-input{
   border: 3px solid rgb(141, 41, 41);
 }
-.btn-green, .btn{
+.btn{
   border-radius: 5px;
   border: none;
-  padding: .5rem 1rem;
-  background-color: rgba(0, 140, 0, 0.65);
+  padding: .5rem 2rem;
+  background-color: var(--color-principal);
+  box-shadow: var(--shadow);
   color: whitesmoke;
   font-size: 16px;
 }
@@ -154,7 +131,7 @@ nav{
 .btn-green:hover,
 .btn:hover{
   transition: .5s ease-in-out;
-  background-color: rgba(0, 87, 0, 0.6);
+  background-color: var(--color-secundario);
   cursor: pointer;
 }
 
@@ -163,27 +140,44 @@ nav{
 /* INDEX */
 
 .index-content{
-  /* border: 1px solid red;  */
-  background: linear-gradient(rgba(56, 42, 178, 0.2), rgba(56, 42, 178, 0.8));
+  background: var(--background-gradient-1);
   display: flex;
   flex-direction: column;
   gap: 20px;
     
 }
 
-.index-content h1{
-  font-size: 48px;
+.hero{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-
-.introduccion{
+.hero-title{
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  text-align: justify;
-  /* line-height: 2rem; */
-  /* list-style:georgian; */
-  width: 60vw;
+  gap: 20px;
+  
+}
+
+.hero h1{
+  font-size: 52px;
+  color: var(--color-secundario);
+  font-family: 'Ubuntu',sans-serif;
+}
+
+.hero p{
+  font-size: 2rem;
+  width: 30vw;
+  opacity: .7;
+}
+
+.hero-img{
+  width: 30vw;
+}
+
+.hero-img img{
+  width: 100%;
 }
 
 /* INDEX */
@@ -191,8 +185,8 @@ nav{
 /* CONVERSION */
 
 .conversion-content{
-  /* border: 1px solid blue; */
-  background: linear-gradient(rgba(56, 42, 178, 0.8), rgba(56, 42, 178, 0.2));
+  background: var(--background-gradient-1);
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -209,13 +203,13 @@ nav{
   gap: 20px;
 }
 
-#conversionForm div h2{
+#conversionForm h2{
   font-size: 32px;
+  text-align: center;
+  color: var(--color-secundario);
 }
 
-#conversionForm div h5{
-  font-size: 20px;
-}
+
 
 #conversionForm .formularioContent{
   
@@ -235,6 +229,7 @@ nav{
   font-size: 16px;
   border-radius: 5px;
   padding: 8px;
+  box-shadow: var(--shadow);
 }
 #conversionForm .conversionResult{
   min-height: 350px;
@@ -267,15 +262,15 @@ nav{
 /* CONVERSION */
 
 
-
 /* CONTACTO */ 
 .contact-content{
-  /* border: 1px solid green; */
-  background: linear-gradient(rgba(56, 42, 178, 0.2), rgba(56, 42, 178, 0.8));
+  background: var(--background-gradient-1);
+  gap: 10vw;
 }
 
 #contactForm{
-  width: 70%;
+  /* width: 70%; */
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -285,10 +280,12 @@ nav{
 
 #contactForm h2{
   font-size: 32px;
+  color: var(--color-secundario);
 }
 
 #contactForm .inputGroup{
-  width: 70%;
+  /* width: 70%; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -300,19 +297,27 @@ nav{
   font-size: 16px;
   border-radius: 5px;
   padding: 8px;
+  box-shadow: var(--shadow);
 }
 
-.btn-contacto{
+#contactForm .btn{
   margin-top: 10px;
   width: 20vw;
+}
+
+.contact-img{
+  width: 30vw;
+} 
+
+.contact-img img{
+  width: 100%;
 }
 
 /* CONTACTO */
 
 /* ACERCA DE */
 .about-content{
-  /* border: 1px solid orange; */
-  background: linear-gradient(rgba(56, 42, 178, 0.8), rgba(56, 42, 178, 0.2));
+  background: var(--background-gradient-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -327,7 +332,10 @@ nav{
   gap: 20px;
 }
 
-.about-company
+.about-company h2,
+.about-us h2{
+  color: var(--color-secundario);
+}
 
 .about-company p{
   text-align: center;
@@ -348,7 +356,7 @@ nav{
   gap: 1vw;
 }
 
-.profile-info{
+.profile{
   padding-top: 10px;
   max-width: 200px;
   display: flex;
@@ -357,37 +365,43 @@ nav{
   gap: 20px;
 }
 
-.profile-info:hover{
+.profile:hover{
   border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow);
 }
 
-.profile-info img{
-  border-radius: 50%;
+.profile-img{
+  /* border-radius: 50%; */
   width: 100%;
   max-width: 120px;
   height: 100%;
   max-height: 120px;
+  
+}
+.profile-img img{
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
 }
 
-.profile-info div{
+
+.profile-info{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-.profile-info div p{
+.profile-info p{
   text-align: center;
 }
-/*  d-flex flex-wrap justify-content-center g-3 mt-4 */
 /* ACERCA DE */
 
 footer{
   display: flex;
   justify-content: center;
   padding: 5px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--color-secundario);
   color: whitesmoke;
   font-family: 'Ubuntu',sans-serif;
 }
@@ -400,7 +414,11 @@ footer{
     border: none;
     font-size: 25px;
     display:block;
-    margin-right: 1rem;
+    margin-right: 2rem;
+  }
+
+  .logo{
+    margin-left: 2rem;
   }
 
   nav{
@@ -408,27 +426,47 @@ footer{
     display: none;
     position: absolute;
     width: 100%;
-    top: 45px;
+    top: 3.25rem;
     padding: 1rem;
     background-color: rgb(0,0,0,0.8);
   }
 
-  .nav-link:hover,
-  .logo-text:hover{
+  .nav-link:hover{
     transform: none;
     font-weight: normal;
   }
 
   /* INDEX */
-  .introduccion{
-    width: 80vw;
+
+  .hero{
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
   }
+
+  .hero-title{
+    align-items: center;
+  }
+
+  .hero p{
+    width: 80vw;
+    text-align: center;
+  }
+
+  .hero-img{
+    width: 50vw;
+  }
+
   /* INDEX */
 
 
   /* CONTACTO */
   #contactForm{
-    width: 100%;
+    width: 80%;
+  }
+
+  .contact-img{
+    display: none;
   }
 
   /* ACERCA DE */
@@ -442,16 +480,14 @@ footer{
 }
 
 @media screen and (max-width: 768px){
-  .index-content{
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
 
-  .index-content h1{
+  .hero h1{
     font-size: 32px;
   }
 
-  .introduccion{
+  .hero p{
+    font-size: 20px;
+    width: 90vw;
     line-height: 1.5rem;
   }
 
@@ -470,6 +506,15 @@ footer{
     width: 100%;
   }
 
+  #conversionForm .inputGroup{
+    width: 50vw;
+  }
+
+  #conversionForm .btn{
+    padding: .5rem 0;
+    width: 100%;
+  }
+
   /* CONVERSION */
 
   /* CONTACTO */
@@ -477,7 +522,7 @@ footer{
     padding: 0 10px;
   }
 
-  #contactForm .inputGroup{
+  #contactForm {
     width: 100%;
   }
 
@@ -497,7 +542,7 @@ footer{
     gap: 20px;
   }
 
-  .profile-info img{
+  .profile-img{
     max-width: 200px;
     max-height: 200px;
   }
