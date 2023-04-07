@@ -1,3 +1,4 @@
+
 moment.locale('es', {
   months: ['enero','febrero','marzo','abril','mayo','junio','julio',
             'agosto','septiembre','octubre','noviembre','diciembre'],
@@ -96,7 +97,7 @@ const conversionDolares = (dolares) => {
 
 const inputDolares = document.getElementById('dolares');
 
-conversionDolares(inputDolares.value)
+conversionDolares(1)
 
 inputDolares.addEventListener('keyup',(event) => {
   inputDolares.value.replace(',','.')
