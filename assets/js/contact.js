@@ -28,11 +28,6 @@ var constraints = {
 
 const contactForm = document.getElementById('contactForm');
 
-// contactForm.nombre.value = 'Pablo';
-// contactForm.email.value = 'pablo@pablo.com';
-// contactForm.emailConf.value = 'pablo@pablo.com';
-// contactForm.motivo.value = 'prestamo'
-// contactForm.mensaje.value = 'asldkjasdkas\nkjkasdasda'
 const limpiarErrores = (contactForm,invalidMessages) => {
   const { nombre,email,emailConf,motivo,mensaje } = contactForm;
   const { invalidNombre,invalidEmail,invalidEmailConf,invalidMotivo,invalidMensaje } = invalidMessages;
@@ -104,24 +99,19 @@ contactForm.addEventListener('submit',(event) => {
   // validaciones
 
   const btnEnviar = document.getElementById('btn-enviar');
-  // btnEnviar.attr. = true;
+  btnEnviar.value = 'Enviando...';
 
-
-
-  // $('#btn-enviar').attr('disabled',true)
   const consulta = {
     nombre: nombre.value,
     email: email.value,
     motivo: motivo.value,
     mensaje: mensaje.value
   }
-
-  console.log(consulta)
-  return;
+  
   setTimeout(() => {
     alert(`Se va a enviar mail a ${consulta.nombre} (${consulta.email}).\nEn consola se puede ver el objeto completo`)
-    // $('.spinner-border').hide();
-    // $('#btn-enviar').attr('disabled',false)
+    console.log(consulta)
+    btnEnviar.value = 'Enviar';
   }, 1000);
 
 })

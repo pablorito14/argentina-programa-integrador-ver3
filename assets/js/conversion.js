@@ -11,7 +11,7 @@ const conversionDolares = (dolares) => {
   const impGan = 45; // percepcion adelanto de ganancias 45%
   const impCatar = 25; // impuesto catar para gastos mayores a 300 dolares
 
-  const fechaInicio = moment().subtract(4,'days').format('YYYY-MM-DD');
+  const fechaInicio = moment().subtract(5,'days').format('YYYY-MM-DD');
   const fechaFinal = moment().add(1,'days').format('YYYY-MM-DD');
 
   let cotizacionDolar = 0;
@@ -25,10 +25,10 @@ const conversionDolares = (dolares) => {
   fetch(`https://mercados.ambito.com//dolar/oficial/historico-general/${fechaInicio}/${fechaFinal}`)
       .then(res => res.json())
       .then(data => {
-        cotizacionDolar = data.at(1).at(2)
+        cotizacionDolar = data[1][2]
         cotizacionDolar = parseFloat(cotizacionDolar.replace(',','.'))
 
-        const fecha = data.at(1).at(0).split('/').reverse().join('-');
+        const fecha = data[1][0].split('/').reverse().join('-');
         let fechaCotizacion = 'actual';
 
         if(!moment().isSame(fecha,'day')){
