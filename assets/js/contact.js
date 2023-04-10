@@ -30,7 +30,6 @@ const contactForm = document.getElementById('contactForm');
 
 const limpiarErrores = (contactForm,invalidMessages) => {
   const { nombre,email,emailConf,motivo,mensaje } = contactForm;
-  const { invalidNombre,invalidEmail,invalidEmailConf,invalidMotivo,invalidMensaje } = invalidMessages;
 
   invalidMessages.invalidNombre.innerHTML = '';
   nombre.classList.remove('invalid-input');
