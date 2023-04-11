@@ -108,8 +108,15 @@ contactForm.addEventListener('submit',(event) => {
   }
   
   setTimeout(() => {
-    alert(`Se va a enviar mail a ${consulta.nombre} (${consulta.email}).\nEn consola se puede ver el objeto completo`)
-    console.log(consulta)
+    Swal.fire({
+      title: '¡Formulario completo!',
+      text: `Se va a enviar mail a ${consulta.nombre} (${consulta.email}).\nEn consola se puede ver el objeto completo`,
+      icon: 'success',
+      allowOutsideClick: false,
+      showCloseButton: true,
+      confirmButtonText: 'Cerrar'
+    })
+
     btnEnviar.value = 'Enviar';
   }, 1000);
 
