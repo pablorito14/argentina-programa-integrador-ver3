@@ -52,7 +52,7 @@ const conversionDolares = (dolares) => {
 
             <p class="text-center conversion-detail">Detalles</p>
             
-            <div class="conversion-details d-flex justify-content-between mb-2">
+            <div class="conversion-details">
               <p><strong>Conversion al dolar oficial</strong></p>
               <p>$ ${valorOficial.toFixed(2)}</p>
             </div>

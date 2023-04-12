@@ -8,9 +8,10 @@
   --color-principal: #e30613;
   --color-secundario: #E84C57;
   --background-gradient-1: linear-gradient(90deg, 
-                                          rgba(12,102,150,0.2) 0%, 
-                                          rgba(12,102,150,0.2) 50%, 
+                                          rgba(12,102,150,0.1) 0%, 
+                                          rgba(12,102,150,0.15) 50%, 
                                           rgba(12,102,150,0.4) 100%);
+  /* --background-gradient-1: rgba(12,102,150,0.1); */
   --shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
   --h1-shadow: 2px 1px #0000009c;
   --h2-shadow: 1px .5px #0000009c;
@@ -21,6 +22,7 @@
   margin: 0;
   padding: 0; 
   font-family: sans-serif;
+  font-size: 16px;
  }
 
 body{
@@ -56,10 +58,10 @@ header{
 
 .logo h2{
   font-size: 2rem;
+  color: var(--color-principal);
 }
 
 .logo h2:hover{
-  color: var(--color-secundario);
   cursor: pointer;
 }
 
@@ -157,14 +159,6 @@ nav a:hover{
   cursor: pointer;
 }
 
-h2{
-  font-size: 32px;
-  text-align: center;
-  color: var(--color-secundario);
-  text-shadow: var(--h2-shadow);
-  font-family: var(--font-family);
-}
-
 /* GENERAL */
 
 /* INDEX */
@@ -191,7 +185,8 @@ h2{
 }
 
 .hero h1{
-  font-size: 52px;
+  /* cambios media query */
+  font-size: 3.25rem;
   color: var(--color-secundario);
   font-family: var(--font-family);
   text-shadow: var(--h1-shadow);
@@ -231,15 +226,12 @@ h2{
   gap: 20px;
 }
 
-/* #conversionForm h2{
-  font-size: 32px;
+#conversionForm h2{
+  /* cambios media query 32px -> 2rem */
+  font-size: 2rem;
   text-align: center;
   color: var(--color-secundario);
-  text-shadow: var(--h2-shadow);
-  font-family: var(--font-family);
-} */
-
-
+}
 
 #conversionForm .formularioContent{
   
@@ -256,14 +248,16 @@ h2{
 }
 
 #conversionForm .inputGroup input{
+  /* cambios media query 16px -> 1rem */
   font-size: 16px;
   border-radius: 5px;
-  padding: 8px;
+  /* cambios media query 8px -> .5rem */
+  padding: .5rem;
   box-shadow: var(--shadow);
   border: none;
 }
 #conversionForm .conversionResult{
-  min-height: 350px;
+  min-height: 3500px;
 }
 
 
@@ -278,8 +272,13 @@ h2{
   font-size: 1.25rem;
 }
 
-.conversion-result .conversion-footer{
-  font-size: 12px;
+#conversionResult .conversion-footer{
+  /* cambios media query 12px -> .75rem */
+  font-size: .75rem;
+}
+
+sup{
+  font-size: .75rem;
 }
 
 .conversion-details{
@@ -288,13 +287,18 @@ h2{
   margin-bottom: .5rem;
   align-items: baseline;
   height: 25px;
-  font-size: 14px;
+  /* cambios media query sacar font-size */
 }
+
+
 /* CONVERSION */
 
 
 /* CONTACTO */ 
 .contact-content{
+  /* cambios media query agregar padding 
+    para que se muevan para abajo al dar error */
+  padding: 10px;
   background: var(--background-gradient-1);
   gap: 10vw;
 }
@@ -307,14 +311,13 @@ h2{
   gap: 10px;
 }
 
-/* #contactForm h2{
-  font-size: 32px;
+#contactForm h2{
+  /* cambios media query 32px -> 2rem */
+  font-size: 2rem;
   color: var(--color-secundario);
-  text-shadow: var(--h2-shadow);
-} */
+}
 
 #contactForm .inputGroup{
-  /* width: 70%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -324,15 +327,18 @@ h2{
 #contactForm .inputGroup input,
 #contactForm .inputGroup select,
 #contactForm .inputGroup textarea{
-  font-size: 16px;
+  /* cambios media query 16px -> 1rem */
+  font-size: 1rem;
   border-radius: 5px;
-  padding: 8px;
+  /* cambios media query 8px -> .5rem */
+  padding: .5rem;
   box-shadow: var(--shadow);
   border: none;
 }
 
 #contactForm .btn{
-  margin-top: 10px;
+  /* cambios media query 10px -> .75rem */
+  margin-top: .75rem;
   width: 20vw;
 }
 
@@ -348,6 +354,8 @@ h2{
 
 /* ACERCA DE */
 .about-content{
+  /* cambios media query agregado para que baje el titulo */
+  min-height: 110vh;
   background: var(--background-gradient-1);
   display: flex;
   flex-direction: column;
@@ -363,12 +371,12 @@ h2{
   gap: 20px;
 }
 
-/* .about-company h2,
+.about-company h2,
 .about-us h2{
-  font-size: 32px;
+  /* cambios media query 32px -> 2rem */
+  font-size: 2rem;
   color: var(--color-secundario);
-  text-shadow: var(--h2-shadow);
-} */
+}
 
 .about-company p{
   text-align: center;
@@ -390,7 +398,6 @@ h2{
 }
 
 .profile{
-  /* padding-top: 10px; */
   padding: 1.5rem;
   max-width: 200px;
   display: flex;
@@ -407,7 +414,6 @@ h2{
 }
 
 .profile-img{
-  /* border-radius: 50%; */
   width: 100%;
   max-width: 120px;
   height: 100%;
@@ -436,7 +442,8 @@ h2{
 footer{
   display: flex;
   justify-content: center;
-  padding: 25px;
+  /* cambios media query 25px -> 1.5rem */
+  padding: 1.5rem;
   background-color: rgb(0,0,0,0.8);
   color: whitesmoke;
   font-family: var(--font-family);
@@ -449,13 +456,17 @@ footer{
     background-color: transparent;
     color: whitesmoke;
     border: none;
-    font-size: 25px;
+    /* cambios media query 25px -> 1.5rem */
+    font-size: 1.5rem;
     display:block;
-    margin-right: 2rem;
+    /* cambios media query 2rem -> 1rem */
+    margin-right: 1rem;
   }
 
   .logo{
-    margin-left: 2rem;
+    /* cambios media query 2rem -> 1rem */
+    margin-left: 1rem;
+    gap: 3vw;
   }
 
   nav{
@@ -463,7 +474,8 @@ footer{
     display: none;
     position: absolute;
     width: 100%;
-    top: 3.25rem;
+    /* cambios media query - cambiar top 4.25rem -> 3.25rem; */
+    top: 5.5rem;
     padding: 1rem;
     background-color: rgb(0,0,0,0.8);
   }
@@ -471,6 +483,11 @@ footer{
   .nav-link:hover{
     transform: none;
     font-weight: normal;
+  }
+
+  /* cambios media query (agregar) */
+  .bi-list{
+    font-size: 3rem;
   }
 
   /* INDEX */
@@ -518,12 +535,34 @@ footer{
 
 @media screen and (max-width: 768px){
 
+  /* cambios media query
+      agregar esto para achicar menu en mobil */
+
+  .logo h2{
+    font-size: 1.5rem;
+  }
+
+  .logo-img{
+    width: 40px;
+  }
+
+  nav{
+    top: 4.25rem;
+  }
+
+  .bi-list{
+    font-size: 2rem;
+  }
+  /* agregar esto para achicar menu en mobil */
+
   .hero h1{
-    font-size: 32px;
+    /* cambios media query 32px -> 48px -> */
+    font-size: 3rem; 
   }
 
   .hero p{
-    font-size: 20px;
+    /* cambios media query 20px -> 1.25rem */
+    font-size: 1.25rem;
     width: 90vw;
     line-height: 1.5rem;
   }
@@ -531,7 +570,8 @@ footer{
   /* CONVERSION */
 
   .conversion-content{
-    padding: 0 10px;
+    /* cambios media query 12px -> .75rem */
+    padding: 0 .75rem;
   }
 
   #conversionForm{
@@ -556,7 +596,8 @@ footer{
 
   /* CONTACTO */
   #contactForm{
-    padding: 0 10px;
+    /* cambios media query 10px -> .75rem */
+    padding: 0 .75rem;
   }
 
   #contactForm {
