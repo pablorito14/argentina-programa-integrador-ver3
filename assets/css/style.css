@@ -7,10 +7,14 @@
 :root{
   --color-principal: #e30613;
   --color-secundario: #E84C57;
-  --background-gradient-1: linear-gradient(90deg, rgba(12,102,150,0.2) 0%, rgba(12,102,150,0.2) 50%, rgba(12,102,150,0.4) 100%);
+  --background-gradient-1: linear-gradient(90deg, 
+                                          rgba(12,102,150,0.2) 0%, 
+                                          rgba(12,102,150,0.2) 50%, 
+                                          rgba(12,102,150,0.4) 100%);
   --shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
   --h1-shadow: 2px 1px #0000009c;
   --h2-shadow: 1px .5px #0000009c;
+  --font-family: 'Ubuntu',sans-serif; 
 }
 
 *{
@@ -22,6 +26,8 @@
 body{
   min-height: 100vh;
 }
+
+
 
 /* BASE */
 
@@ -45,10 +51,23 @@ header{
   align-items: center;
   gap: 1vw;
   margin-left: 4rem;
-  width: 30px;
 }
 
-.logo img{
+
+.logo h2{
+  font-size: 2rem;
+}
+
+.logo h2:hover{
+  color: var(--color-secundario);
+  cursor: pointer;
+}
+
+.logo-img{
+  width: 60px;
+}
+
+.logo-img img{
   width: 100%;
 }
 
@@ -67,6 +86,7 @@ nav a{
   padding: .5rem;
   color: whitesmoke;
   text-decoration: none;
+  font-family: var(--font-family);
 }
 
 
@@ -137,6 +157,14 @@ nav a:hover{
   cursor: pointer;
 }
 
+h2{
+  font-size: 32px;
+  text-align: center;
+  color: var(--color-secundario);
+  text-shadow: var(--h2-shadow);
+  font-family: var(--font-family);
+}
+
 /* GENERAL */
 
 /* INDEX */
@@ -165,7 +193,7 @@ nav a:hover{
 .hero h1{
   font-size: 52px;
   color: var(--color-secundario);
-  font-family: 'Ubuntu',sans-serif;
+  font-family: var(--font-family);
   text-shadow: var(--h1-shadow);
 }
 
@@ -195,9 +223,6 @@ nav a:hover{
   gap: 10px;
 }
 
-
-
-
 #conversionForm{
   width: 70%;
   display: flex;
@@ -206,12 +231,13 @@ nav a:hover{
   gap: 20px;
 }
 
-#conversionForm h2{
+/* #conversionForm h2{
   font-size: 32px;
   text-align: center;
   color: var(--color-secundario);
   text-shadow: var(--h2-shadow);
-}
+  font-family: var(--font-family);
+} */
 
 
 
@@ -274,20 +300,18 @@ nav a:hover{
 }
 
 #contactForm{
-  /* width: 70%; */
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  /* padding: 10vh 3vw; */
 }
 
-#contactForm h2{
+/* #contactForm h2{
   font-size: 32px;
   color: var(--color-secundario);
   text-shadow: var(--h2-shadow);
-}
+} */
 
 #contactForm .inputGroup{
   /* width: 70%; */
@@ -339,12 +363,12 @@ nav a:hover{
   gap: 20px;
 }
 
-.about-company h2,
+/* .about-company h2,
 .about-us h2{
   font-size: 32px;
   color: var(--color-secundario);
   text-shadow: var(--h2-shadow);
-}
+} */
 
 .about-company p{
   text-align: center;
@@ -362,16 +386,19 @@ nav a:hover{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1vw;
+  gap: 2vw;
 }
 
 .profile{
-  padding-top: 10px;
+  /* padding-top: 10px; */
+  padding: 1.5rem;
   max-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
 
 .profile:hover{
@@ -409,10 +436,10 @@ nav a:hover{
 footer{
   display: flex;
   justify-content: center;
-  padding: 5px;
-  background-color: var(--color-secundario);
+  padding: 25px;
+  background-color: rgb(0,0,0,0.8);
   color: whitesmoke;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: var(--font-family);
   text-shadow: var(--h2-shadow);
 }
 
