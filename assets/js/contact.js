@@ -50,8 +50,8 @@ const limpiarErrores = (contactForm,invalidMessages) => {
 contactForm.addEventListener('submit',(event) => {
   event.preventDefault();
 
-  const { nombre,email,emailConf,motivo,mensaje } = contactForm;
-
+  const { test,nombre,email,emailConf,motivo,mensaje } = contactForm;
+  
   // validaciones
   const invalidMessages = document.getElementsByClassName('invalid-message');
   
@@ -65,6 +65,7 @@ contactForm.addEventListener('submit',(event) => {
     mensaje: mensaje.value
   },constraints,{format:'grouped'});
 
+  
   if (invalidInputs) {
     if(invalidInputs.nombre){
       invalidMessages.invalidNombre.innerHTML = 'Ingrese su nombre (al menos 3 caracteres)';
