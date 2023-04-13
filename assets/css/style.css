@@ -1,4 +1,3 @@
-/* @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"); */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
@@ -7,14 +6,15 @@
 :root{
   --color-principal: #e30613;
   --color-secundario: #E84C57;
-  --background-gradient-1: linear-gradient(90deg, 
+  /* gradiente azul como estaba */
+  /* --background-gradient-1: linear-gradient(90deg, 
                                           rgba(12,102,150,0.1) 0%, 
                                           rgba(12,102,150,0.15) 50%, 
-                                          rgba(12,102,150,0.4) 100%);
-  /* --background-gradient-1: rgba(12,102,150,0.1); */
+                                          rgba(12,102,150,0.4) 100%); */
+
+  /* gradiente mas claro */
+  --background-gradient-1: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);;
   --shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
-  --h1-shadow: 2px 1px #0000009c;
-  --h2-shadow: 1px .5px #0000009c;
   --font-family: 'Ubuntu',sans-serif; 
 }
 
@@ -28,11 +28,7 @@
 body{
   min-height: 100vh;
 }
-
-
-
 /* BASE */
-
 
 /* HEADER */
 header{
@@ -43,9 +39,13 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:rgba(0, 0, 0, 0.8);
+  background-color:rgba(0, 0, 0, 0.9);
   color: whitesmoke;
   box-shadow: var(--shadow);
+}
+
+header a{
+  text-decoration: none;
 }
 
 .logo{
@@ -55,14 +55,10 @@ header{
   margin-left: 4rem;
 }
 
-
 .logo h2{
   font-size: 2rem;
+  font-family: var(--font-family);
   color: var(--color-principal);
-}
-
-.logo h2:hover{
-  cursor: pointer;
 }
 
 .logo-img{
@@ -81,7 +77,6 @@ nav{
   width: auto;
   padding: 0;
   background: transparent;
-  
 }
 
 nav a{
@@ -90,7 +85,6 @@ nav a{
   text-decoration: none;
   font-family: var(--font-family);
 }
-
 
 nav a:hover{
   color: var(--color-secundario);
@@ -107,11 +101,9 @@ nav a:hover{
 .text-center{
   text-align: center;
 }
-
 /* HEADER */
 
 /* GENERAL */
-
 .content{
   display: flex;
   justify-content: center;
@@ -142,6 +134,7 @@ nav a:hover{
 .invalid-input{
   border: 3px solid rgb(141, 41, 41) !important;
 }
+
 .btn{
   border-radius: 5px;
   border: none;
@@ -149,7 +142,7 @@ nav a:hover{
   background-color: var(--color-principal);
   box-shadow: var(--shadow);
   color: whitesmoke;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .btn-green:hover,
@@ -158,17 +151,14 @@ nav a:hover{
   background-color: var(--color-secundario);
   cursor: pointer;
 }
-
 /* GENERAL */
 
 /* INDEX */
-
-.index-content{
+.hero-content{
   background: var(--background-gradient-1);
   display: flex;
   flex-direction: column;
   gap: 20px;
-    
 }
 
 .hero{
@@ -177,19 +167,19 @@ nav a:hover{
   justify-content: space-around;
   align-items: center;
 }
+
 .hero-title{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
 }
 
 .hero h1{
-  /* cambios media query */
   font-size: 3.25rem;
   color: var(--color-secundario);
   font-family: var(--font-family);
   text-shadow: var(--h1-shadow);
+  text-shadow: 1px 1px #3e3e3e;
 }
 
 .hero p{
@@ -205,14 +195,11 @@ nav a:hover{
 .hero-img img{
   width: 100%;
 }
-
 /* INDEX */
 
 /* CONVERSION */
-
 .conversion-content{
   background: var(--background-gradient-1);
-
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -227,14 +214,12 @@ nav a:hover{
 }
 
 #conversionForm h2{
-  /* cambios media query 32px -> 2rem */
   font-size: 2rem;
   text-align: center;
   color: var(--color-secundario);
 }
 
 #conversionForm .formularioContent{
-  
   display: flex;
   align-items: center;
   gap: 10px;
@@ -248,18 +233,16 @@ nav a:hover{
 }
 
 #conversionForm .inputGroup input{
-  /* cambios media query 16px -> 1rem */
   font-size: 16px;
   border-radius: 5px;
-  /* cambios media query 8px -> .5rem */
   padding: .5rem;
   box-shadow: var(--shadow);
   border: none;
 }
+
 #conversionForm .conversionResult{
   min-height: 3500px;
 }
-
 
 .result{
   border-bottom: 2px solid #3e3e3e;
@@ -273,7 +256,6 @@ nav a:hover{
 }
 
 #conversionResult .conversion-footer{
-  /* cambios media query 12px -> .75rem */
   font-size: .75rem;
 }
 
@@ -287,17 +269,11 @@ sup{
   margin-bottom: .5rem;
   align-items: baseline;
   height: 25px;
-  /* cambios media query sacar font-size */
 }
-
-
 /* CONVERSION */
-
 
 /* CONTACTO */ 
 .contact-content{
-  /* cambios media query agregar padding 
-    para que se muevan para abajo al dar error */
   padding: 10px;
   background: var(--background-gradient-1);
   gap: 10vw;
@@ -312,7 +288,6 @@ sup{
 }
 
 #contactForm h2{
-  /* cambios media query 32px -> 2rem */
   font-size: 2rem;
   color: var(--color-secundario);
 }
@@ -327,17 +302,14 @@ sup{
 #contactForm .inputGroup input,
 #contactForm .inputGroup select,
 #contactForm .inputGroup textarea{
-  /* cambios media query 16px -> 1rem */
   font-size: 1rem;
   border-radius: 5px;
-  /* cambios media query 8px -> .5rem */
   padding: .5rem;
   box-shadow: var(--shadow);
   border: none;
 }
 
 #contactForm .btn{
-  /* cambios media query 10px -> .75rem */
   margin-top: .75rem;
   width: 20vw;
 }
@@ -349,18 +321,16 @@ sup{
 .contact-img img{
   width: 100%;
 }
-
 /* CONTACTO */
 
 /* ACERCA DE */
 .about-content{
-  /* cambios media query agregado para que baje el titulo */
-  min-height: 110vh;
   background: var(--background-gradient-1);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  padding-top: 5vw;
 }
 
 .about-company{
@@ -373,7 +343,6 @@ sup{
 
 .about-company h2,
 .about-us h2{
-  /* cambios media query 32px -> 2rem */
   font-size: 2rem;
   color: var(--color-secundario);
 }
@@ -418,14 +387,13 @@ sup{
   max-width: 120px;
   height: 100%;
   max-height: 120px;
-  
 }
+
 .profile-img img{
   width: 100%;
   border-radius: 50%;
   box-shadow: var(--shadow);
 }
-
 
 .profile-info{
   display: flex;
@@ -442,9 +410,8 @@ sup{
 footer{
   display: flex;
   justify-content: center;
-  /* cambios media query 25px -> 1.5rem */
   padding: 1.5rem;
-  background-color: rgb(0,0,0,0.8);
+  background-color: rgb(0,0,0);
   color: whitesmoke;
   font-family: var(--font-family);
   text-shadow: var(--h2-shadow);
@@ -456,28 +423,24 @@ footer{
     background-color: transparent;
     color: whitesmoke;
     border: none;
-    /* cambios media query 25px -> 1.5rem */
     font-size: 1.5rem;
     display:block;
-    /* cambios media query 2rem -> 1rem */
     margin-right: 1rem;
   }
 
   .logo{
-    /* cambios media query 2rem -> 1rem */
     margin-left: 1rem;
     gap: 3vw;
   }
 
   nav{
-    opacity: .9;
+    background-color: rgb(0,0,0,0.9);
     display: none;
     position: absolute;
     width: 100%;
-    /* cambios media query - cambiar top 4.25rem -> 3.25rem; */
     top: 5.5rem;
     padding: 1rem;
-    background-color: rgb(0,0,0,0.8);
+    
   }
 
   .nav-link:hover{
@@ -485,13 +448,11 @@ footer{
     font-weight: normal;
   }
 
-  /* cambios media query (agregar) */
   .bi-list{
     font-size: 3rem;
   }
 
   /* INDEX */
-
   .hero{
     flex-direction: column;
     align-items: center;
@@ -510,9 +471,7 @@ footer{
   .hero-img{
     width: 50vw;
   }
-
   /* INDEX */
-
 
   /* CONTACTO */
   #contactForm{
@@ -522,8 +481,13 @@ footer{
   .contact-img{
     display: none;
   }
+  /* CONTACTO */
 
   /* ACERCA DE */
+  .about-content{
+    padding-top: 10vw;
+  }
+
   .about-company{
     width: 90%;
   }
@@ -531,12 +495,10 @@ footer{
   .about-us{
     width: 90%;
   }
+  /* ACERCA DE */
 }
 
 @media screen and (max-width: 768px){
-
-  /* cambios media query
-      agregar esto para achicar menu en mobil */
 
   .logo h2{
     font-size: 1.5rem;
@@ -553,24 +515,19 @@ footer{
   .bi-list{
     font-size: 2rem;
   }
-  /* agregar esto para achicar menu en mobil */
 
   .hero h1{
-    /* cambios media query 32px -> 48px -> */
     font-size: 3rem; 
   }
 
   .hero p{
-    /* cambios media query 20px -> 1.25rem */
     font-size: 1.25rem;
     width: 90vw;
     line-height: 1.5rem;
   }
 
   /* CONVERSION */
-
   .conversion-content{
-    /* cambios media query 12px -> .75rem */
     padding: 0 .75rem;
   }
 
@@ -591,12 +548,10 @@ footer{
     padding: .5rem 0;
     width: 100%;
   }
-
   /* CONVERSION */
 
   /* CONTACTO */
   #contactForm{
-    /* cambios media query 10px -> .75rem */
     padding: 0 .75rem;
   }
 
@@ -607,7 +562,6 @@ footer{
   #contactForm .btn-contacto{
     width: 50vw;
   }
-
   /* CONTACTO */
 
   /* ACERCA DE */
@@ -617,7 +571,11 @@ footer{
   }
 
   .about-us-content{
-    gap: 20px;
+    gap: 5vh;
+  }
+
+  .profile{
+    padding: 2.5rem;
   }
 
   .profile-img{
@@ -625,6 +583,4 @@ footer{
     max-height: 200px;
   }
   /* ACERCA DE */
-
-
 }
