@@ -83,6 +83,11 @@ const conversionDolares = (dolares) => {
         `
         const conversionResultado = document.getElementById('conversionResult');
         
+        /**
+         * en este caso el setTimeout lo usamos para que el boton tenga una pequeña animacion
+         * como si estuviera procesando datos
+         */
+        
         setTimeout(() => {
           conversionResultado.innerHTML = html;
           boton.value = 'Calcular';

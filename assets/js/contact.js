@@ -107,6 +107,9 @@ contactForm.addEventListener('submit',(event) => {
     mensaje: mensaje.value
   }
   
+  /**
+   * setTimeout usado para simular una demora como si se tuviera que enviar un correo de verdad
+   */
   setTimeout(() => {
     Swal.fire({
       title: '¡Formulario completo!',
