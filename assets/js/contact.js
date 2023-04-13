@@ -23,7 +23,6 @@ var constraints = {
       minimum: 10
     }
   }
-
 }
 
 const contactForm = document.getElementById('contactForm');
