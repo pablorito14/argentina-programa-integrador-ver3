@@ -65,48 +65,57 @@
     </section>
 
     <section class="content contact-content" id="contact">
-      
-      <form id="contactForm">
+      <div class="formulario">
+
         <h2>Envianos tu consulta</h2>
-
-        <div class="inputGroup">
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" placeholder="Juan Carlos Gonzalez" >
-          <p class="invalid-message" id="invalidNombre"></p>
-        </div>
+        <form id="contactForm">
+          <div>
+            <div class="columna">
   
-        <div class="inputGroup">
-          <label for="email">Correo</label>
-          <input type="text" name="email" id="email" placeholder="juancarlos@gmail.com" >
-          <p class="invalid-message" id="invalidEmail"></p>
-        </div>
+              <div class="inputGroup">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Juan Carlos Gonzalez" >
+                <p class="invalid-message" id="invalidNombre"></p>
+              </div>
+        
+              <div class="inputGroup">
+                <label for="email">Correo</label>
+                <input type="text" name="email" id="email" placeholder="juancarlos@gmail.com" >
+                <p class="invalid-message" id="invalidEmail"></p>
+              </div>
+        
+              <div class="inputGroup">
+                <label for="emailConf">Confirmar correo</label>
+                <input type="text" name="emailConf" id="emailConf" placeholder="juancarlos@gmail.com" >
+                <p class="invalid-message" id="invalidEmailConf"></p>
+              </div>
+            </div>
+            <div class="columna">
+              <div class="inputGroup">
+                <label for="motivo">Motivo de consulta</label>
+                <select name="motivo" id="motivo" >
+                  <option value="" selected disabled>-- Elegir motivo de consulta --</option>
+                  <option value="cotizacion">Cotización</option>
+                  <option value="prestamo">Préstamo</option>
+                  <option value="asesoramiento">Asesoramiento</option>
+                  <option value="compra-moneda-extrangera">Compra moneda extrangera</option>
+                </select>
+                <p class="invalid-message" id="invalidMotivo"></p>
+              </div>
+        
+              <div class="inputGroup">
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" rows="5" placeholder="Consulta o mensaje que nos quieras enviar" ></textarea>
+                <p class="invalid-message" id="invalidMensaje"></p>
+              </div>
   
-        <div class="inputGroup">
-          <label for="emailConf">Confirmar correo</label>
-          <input type="text" name="emailConf" id="emailConf" placeholder="juancarlos@gmail.com" >
-          <p class="invalid-message" id="invalidEmailConf"></p>
-        </div>
-  
-        <div class="inputGroup">
-          <label for="motivo">Motivo de consulta</label>
-          <select name="motivo" id="motivo" >
-            <option value="" selected disabled>-- Elegir motivo de consulta --</option>
-            <option value="cotizacion">Cotización</option>
-            <option value="prestamo">Préstamo</option>
-            <option value="asesoramiento">Asesoramiento</option>
-            <option value="compra-moneda-extrangera">Compra moneda extrangera</option>
-          </select>
-          <p class="invalid-message" id="invalidMotivo"></p>
-        </div>
-  
-        <div class="inputGroup">
-          <label for="mensaje">Mensaje</label>
-          <textarea name="mensaje" id="mensaje" rows="3" placeholder="Consulta o mensaje que nos quieras enviar" ></textarea>
-          <p class="invalid-message" id="invalidMensaje"></p>
-        </div>
-
-        <input type="submit" id="btn-enviar" value="Enviar" class="btn btn-contacto">
-      </form>
+            </div>
+          </div>
+          <div>
+            <input type="submit" id="btn-enviar" value="Enviar" class="btn btn-contacto">
+          </div>
+        </form>
+      </div>
 
       <div class="contact-img">
         <img src="./assets/img/contact.svg" alt="Envianos tu consulta">

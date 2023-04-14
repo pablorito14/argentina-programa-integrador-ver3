@@ -276,23 +276,52 @@ sup{
 
 /* CONTACTO */ 
 .contact-content{
-  padding: 10px;
+  /* padding: 10px; */
   background: var(--background-gradient-1);
   gap: 10vw;
+  padding: 0 4rem;
+}
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  width: 80%;
+}
+
+.formulario h2{
+  font-size: 2rem;
+  color: var(--color-secundario);
+  text-align: center;
 }
 
 #contactForm{
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-#contactForm h2{
+/* #contactForm h2{
   font-size: 2rem;
   color: var(--color-secundario);
+} */
+
+#contactForm div{
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  width: 100%;
 }
+
+#contactForm .columna{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  width: 50%;
+}
+
 
 #contactForm .inputGroup{
   width: 100%;
@@ -306,9 +335,13 @@ sup{
 #contactForm .inputGroup textarea{
   font-size: 1rem;
   border-radius: 5px;
-  padding: .5rem;
+  padding: .75rem .5rem;
   box-shadow: var(--shadow);
   border: none;
+}
+
+#contactForm .inputGroup textarea{
+  height: 8rem;
 }
 
 #contactForm .btn{
@@ -332,7 +365,7 @@ sup{
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  /* padding-top: 5vw; */
+  padding-top: 5vw;
 }
 
 .about-company{
@@ -476,8 +509,23 @@ footer{
   /* INDEX */
 
   /* CONTACTO */
-  #contactForm{
-    width: 80%;
+  .contact-content{
+    padding: 0 2rem;
+  }
+
+  .formulario{
+    width: 100%;
+  }
+
+  
+
+  #contactForm .columna{
+    gap: 5vw;
+    width: 100%;
+  }
+
+  #contactForm .inputGroup textarea{
+    height: 9.5rem;
   }
 
   .contact-img{
@@ -553,16 +601,22 @@ footer{
   /* CONVERSION */
 
   /* CONTACTO */
-  #contactForm{
-    padding: 0 .75rem;
+  .contact-content{
+    padding: 0 2rem;
   }
 
-  #contactForm {
+  .formulario{
     width: 100%;
   }
 
+  #contactForm div{
+    /* display: block; */
+    flex-direction: column;
+    gap: 5vw;
+  }
+
   #contactForm .btn-contacto{
-    width: 50vw;
+    width: 100%;
   }
   /* CONTACTO */
 
